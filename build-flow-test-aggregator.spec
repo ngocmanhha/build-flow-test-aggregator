@@ -1,7 +1,8 @@
 %global     plugin_name build-flow-test-aggregator
+%global     debug_package %{nil}
 Name:       jenkins-in-house-plugins-%{plugin_name}
 Version:    1.3
-Release:    2%{?dist}
+Release:    4%{?dist}
 Summary:    A jenkins in-house plugins %{plugin_name}.hpi
 Obsoletes:  jenkins-upstream-plugins-%{plugin_name} <= %{version}
 Requires:   jenkins
@@ -34,6 +35,11 @@ mvn package
 %{_sharedstatedir}/juseppe/%{plugin_name}.hpi
 
 %changelog
+* Wed Dec 22 2021 +0700 Manh Ha <manh.ha@gooddata.com> - 1.3-4
+- CONFIG: SETI-6576 support el8
+- Added repositories and pluginRepositories config for pom.xml
+- Bump version for build-flow-test-aggregator to 4 to override previous version
+
 * Thu Apr 23 2020 +0700 Hien Tran <hien.tran@gooddata.com> - 1.3-3
 - CONFIG: SETI-4077 remove obsoletes package in spec file
 
